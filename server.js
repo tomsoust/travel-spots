@@ -54,6 +54,39 @@ app.get('/login', (req, res) => {
   res.render('login')
 })
 
+app.post('/login', (req, res) => {
+
+  sql = `
+  SELECT * FROM users WHERE email = $1;`
+
+  values = [req.body.email]
+
+  db.query(sql, values, (err, dbRes) => {
+    if(err) {
+      console.log(err)
+    }
+    
+    if (dbRes.rows.length === 0) {
+     return res.render('login')
+    }
+  
+
+
+    const userInputPassword = req.body.password
+    const hashedPassword = dbRes.rows[0].password_digest
+
+    bcrypt.compare(userInputPassword, hashedPassword, (err, result) => {
+      if(result) {
+        req.session.userId = dbRes.rows[0].id
+        return res.redirect('/')
+      } else {
+      return res.render('login')
+      }
+    })  
+  })
+
+})
+
 app.get('/signup', (req, res) => {
 
   res.render('signup')
@@ -125,10 +158,10 @@ app.put('/places/:id', (req, res) => {
   
   const sql = `
     UPDATE locations
-    SET name = $1, image_url = $2, country = $3
-    WHERE id = $4;
+    SET name = $1, image_url = $2, country = $3, activities = $4
+    WHERE id = $5;
   `
-  const values = [req.body.name, req.body.image_url, req.body.country, req.params.id]
+  const values = [req.body.name, req.body.image_url, req.body.country, req.body.activities, req.params.id]
 
   db.query(sql, values, (err, dbRes) => {
     if (err) {
