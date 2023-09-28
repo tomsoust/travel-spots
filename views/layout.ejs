@@ -7,12 +7,33 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+
+  <% if (userId) { %>
+    <%= user.email %>
+
+  <% } %>
+
   <nav>
     <a href="/">Home</a>
     <a href="/about">about</a>
+
+    <% if (userId) { %>
     <a href="/places">post</a>
-    <a href="/login">login</a>
-    <a href="/signup">create account</a>
+    <% } %>
+
+    <% if (userId) { %>
+    
+      <form action="/logout" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button>logout</button>
+      </form>
+      <% } else { %>
+        <a href="/login">login</a>
+        
+        
+        
+        <a href="/signup">create account</a>
+        <% } %>
 
 
 

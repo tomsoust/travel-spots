@@ -8,9 +8,15 @@
 
 <p>the best thing to do here is <%= location.activities %> </p>
 
+<p>
+  <a href="https://www.google.com/maps/search/?api=1&query=<%= location.name %>" target="_blank">view on map</a>
+</p>
+
 <form action="/places/<%= location.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <button>delete</button>
 </form>
+
+
 
 <a href="/places/<%= location.id %>/edit">edit spot</a>
