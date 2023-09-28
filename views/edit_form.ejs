@@ -1,0 +1,12 @@
+<h2>edit spot</h2>
+
+<form action="/places/<%= location.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <label for="">name</label>
+  <input name="name" type="text" value="<%= location.name %>">
+  <label for="">image url</label>
+  <input name="image_url" type="text" value="<%= location.image_url %>">
+  <label for="">country</label>
+  <input name="country" type="text" value="<%= location.country %>">
+  <button>update</button>
+</form>

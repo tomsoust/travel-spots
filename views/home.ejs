@@ -1,0 +1,19 @@
+<h1>welcome to my app</h1>
+<h2>best travel spots</h2>
+<section class="locations-list">
+<% for (let location of locations) { %>
+  <div>
+    <h2>
+    <a href="/places/<%= location.id %>">
+    <%= location.name %>
+  </a>
+</h2>
+    <img src="<%= location.image_url %>" alt="">
+    <p>
+  
+      <%= location.country %>
+    
+    </p>
+  </div>
+<% } %>
+</section>

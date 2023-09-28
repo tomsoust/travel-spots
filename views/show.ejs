@@ -1,0 +1,16 @@
+<h2>The HotSpot details</h2>
+
+<h3> <%= location.name %> </h3>
+
+<img src="<%= location.image_url %>" alt="">
+
+<p> <%= location.country %> </p>
+
+<p>the best thing to do here is <%= location.activities %> </p>
+
+<form action="/places/<%= location.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button>delete</button>
+</form>
+
+<a href="/places/<%= location.id %>/edit">edit spot</a>

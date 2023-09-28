@@ -1,0 +1,13 @@
+img {
+  height: 200px;
+  width: 200px;
+}
+
+body {
+  background-color: aquamarine;
+}
+
+.locations-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
