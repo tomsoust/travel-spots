@@ -4,9 +4,9 @@ A small and easy web app to share all of your favourite travel locations. You ca
 
 ## Images
 
-![Home page](./screenshots/home_page.png)
+![Home page](./screendshots/home_page.png)
 
-![Detailed view](./screenshots/detail_page.png)
+![Detailed view](./screendshots/detail_page.png)
 
 ## Technologies Used
 - JavaScript
