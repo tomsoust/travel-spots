@@ -5,9 +5,20 @@ img {
 
 body {
   background-color: aquamarine;
+  font-family: 'Inconsolata', monospace;
+}
+
+.locations-list img {
+  border-radius: 10%;
+  border: 2px solid black;
+  margin: 10px;
 }
 
 .locations-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
+.locations-list img:hover {
+  transform: scale(1.1); /* Scale up the image on hover */
+}
+
