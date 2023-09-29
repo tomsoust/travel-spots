@@ -2,6 +2,9 @@
 
 A small and easy web app to share all of your favourite travel locations. You can share any travel location you like, but my intentions are for these spots only to be places you have been to. You can view a photo, find out what the best thing to do there is and even find the location on google maps.
 
+## GEtting Started
+Use this link https://my-travel-hotspots.onrender.com/ to go to my web app!
+
 ## Images
 
 ![Home page](./screendshots/home_page.png)
